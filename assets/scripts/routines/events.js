@@ -16,10 +16,17 @@ const onAddRoutine = function (event) {
     .catch(ui.addRoutineFailure)
 }
 
+const onViewRoutines = function () {
+  api.index()
+    .then(ui.viewRoutinesSuccess)
+    .catch(ui.viewRoutinesFailure)
+}
+
 const addHandlers = function () {
   $('#addRoutine').on('submit', onAddRoutine)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onViewRoutines
 }

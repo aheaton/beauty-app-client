@@ -11,6 +11,7 @@ const signInSuccess = function (data) {
   greenNotification('Signed in successfully')
   $('body').removeClass('background')
   $('#addRoutine').show()
+  $('#nav-tabs').show()
 }
 
 const signInFailure = function () {

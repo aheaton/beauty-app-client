@@ -110,50 +110,34 @@
           </div>
         </div>
 
-        <!-- card layout -->
+    <!-- <div class="active-after-signin" id="home-page" style="display: none;">
+    </div> -->
 
-        <div class="active-after-signin" id="home-page" style="display: none;">
+    <ul id="nav-tabs" class="nav nav-tabs nav-fill" style="display: none;">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#trending" role="tab">Trending</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#favorites" role="tab">My Favorites</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#myposts" role="tab">My Posts</a>
+      </li>
+    </ul>
 
-        <div class="wrapper">
-
-    		<div class="card radius shadowDepth1">
-    			<div class="card__image border-tlr-radius">
-    				<img src="https://i.imgur.com/jYa1WDz.jpg" alt="image" class="border-tlr-radius">
-                </div>
-
-    			<div class="card__content card__padding">
-                    <div class="card__share">
-
-                        <a id="share" class="share-toggle share-icon" href="#"></a>
-                    </div>
-
-    				<div class="card__meta">
-            <time>17th March</time>
-    				</div>
-
-    				<article class="card__article">
-	    				<h2><a href="#">On-The-Go</a></h2>
-
-	    				<p>This is an easy look that takes just 15 minutes! Perfect for the girl on-the-go.</p>
-              <a href="#">View routine!</a>
-	    			</article>
-    			</div>
-
-    			<div class="card__action">
-
-    				<div class="card__author">
-    					<div class="card__author-content">
-    						By <a href="#">Alicia Heaton</a>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
+    <div class="tab-content">
+      <!-- Trending Tab -->
+      <div class="tab-pane active all-routines-container" id="home" role="tabpanel"></div>
+      <!-- Favorites Tab -->
+      <div class="tab-pane" id="favorites" role="tabpanel">
+        Your favorites will be shown here.
       </div>
-
-
+      <!-- My Posts Tab for adds and edits -->
+      <div class="tab-pane" id="myposts" role="tabpanel">
       <!-- Add Routine Form -->
       <form id="addRoutine" style="display: none;">
-        <h2>routine a New Routine</h2>
+        <h2>Add a New Routine</h2>
+        <p>Share your beauty tips with the world!</p>
         <div class="form-group">
           <label for="routineType">Routine Type</label>
           <select class="form-control" id="routineType" name="routine[routineType]" required>
@@ -216,6 +200,8 @@
         <button type="button" class="btn btn-secondary" id="new-user-cancel" name="cancel">Cancel</button>
         <button type="submit" class="btn btn-primary">Post Routine</button>
       </form>
+    </div>
+</div>
 
     </body>
 </html>
