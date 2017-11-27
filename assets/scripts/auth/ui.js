@@ -10,6 +10,7 @@ const signInSuccess = function (data) {
   store.user = data.user
   greenNotification('Signed in successfully')
   $('body').removeClass('background')
+  $('#addRoutine').show()
 }
 
 const signInFailure = function () {
@@ -52,6 +53,7 @@ const signOutSuccess = function () {
   $('#change-password-div').hide()
   $('#home-page').hide()
   $('#fileView').hide()
+  $('#addRoutine').hide()
   $('#sign-in-div').show()
   greenNotification('Signed out successfully')
 }

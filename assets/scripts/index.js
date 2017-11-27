@@ -3,11 +3,13 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events')
+const routineEvents = require('./routines/events')
 // const mutationObservers = require('./shared/mutation-observers')
 
 $(() => {
   setAPIOrigin(location, config)
   authEvents.addHandlers()
+  routineEvents.addHandlers()
   // mutationObservers.registerObservers()
   $('#sign-in-div').show()
 })
