@@ -1,0 +1,18 @@
+<a id="edit-back-button" class="mr-3" aria-hidden="true" data-id="{{ routine._id }}"><i style="color: #43a1f7;" class="fa fa-arrow-left fa-2x m-2"></i></a>
+
+  <div class="card-body" style="background-color: #f3f6f9">
+    <form class="mb-1" id="view-file">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Routine Type:</strong>
+          <select class="form-control" id="routineType" name="routine[routineType]" required>
+            <option>On-The-Go</option>
+            <option>Every Day</option>
+            <option>Night Out</option>
+            <option>Special Occasion</option>
+          </select>
+        </li>
+        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Description:</strong>
+        <textarea rows="4" cols="50" class="form-control" id="description" name="routine[description]" placeholder="Description">{{upload.description}}</textarea>
+      </ul>
+    </form>
+  </div>

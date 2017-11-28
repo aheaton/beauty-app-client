@@ -21,10 +21,10 @@
     </div> -->
 
     <article class="card__article">
-      <h2><a href="#" class="show-routine-link" data-id="{{routine._id}}">{{routine.routineType}}</a></h2>
+      <h2><a href="#" class="edit-routine-link" data-id="{{routine._id}}">{{routine.routineType}}</a></h2>
 
       <p>{{routine.description}}</p>
-      <a href="#" class="show-routine-link" data-id="{{routine._id}}">View Routine</a>
+      <a href="#" class="edit-routine-link" data-id="{{routine._id}}">Edit Routine</a>
     </article>
   </div>
 
@@ -43,3 +43,5 @@
 {{else}}
       <p class="noRoutinesMessage">No routines currently posted. Add a routine to start it up!</p>
     {{/if}}
+
+    <button type="button" class="btn btn-primary add-routine-button">Add Your Routine</button>

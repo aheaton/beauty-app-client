@@ -27,7 +27,30 @@ const index = function () {
   })
 }
 
+const show = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + 'routines/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const update = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + 'routines/' + store.routineId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   create,
-  index
+  index,
+  show,
+  update
 }

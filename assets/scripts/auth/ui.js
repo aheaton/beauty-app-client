@@ -10,8 +10,8 @@ const signInSuccess = function (data) {
   store.user = data.user
   greenNotification('Signed in successfully')
   $('body').removeClass('background')
-  $('#addRoutine').show()
   $('#nav-tabs').show()
+  // $('.add-routine-button').show()
 }
 
 const signInFailure = function () {
@@ -50,11 +50,11 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function () {
   store.user = null
-  $('.active-after-signin').hide()
   $('#change-password-div').hide()
-  $('#home-page').hide()
-  $('#fileView').hide()
+  $('.add-routine-button').hide()
   $('#addRoutine').hide()
+  $('#nav-tabs').hide()
+  $('.all-routines-container').empty()
   $('#sign-in-div').show()
   greenNotification('Signed out successfully')
 }

@@ -12,6 +12,18 @@ $(() => {
   routineEvents.addHandlers()
   // mutationObservers.registerObservers()
   $('#sign-in-div').show()
+  $('#trending').click(function (event) {
+    event.preventDefault()
+    $(this).tab('show')
+    routineEvents.onViewRoutines()
+  })
+  $('#myposts').click(function (event) {
+    event.preventDefault()
+    console.log('hitting this tab event handler')
+    $(this).tab('show')
+    routineEvents.onViewMyRoutines()
+  })
+  $('#show-routine-link').on('click', routineEvents.onViewRoutine)
 })
 
 // use require with a reference to bundle the file and use it in this file
