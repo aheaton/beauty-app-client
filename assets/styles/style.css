@@ -165,3 +165,7 @@ h2 {
 #nav-tabs {
   padding-top: 10px;
 }
+
+option:checked {
+    display: none;
+}

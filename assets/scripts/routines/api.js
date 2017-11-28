@@ -38,6 +38,7 @@ const show = function (id) {
 }
 
 const update = function (id, data) {
+  console.log('id passed into edit', id)
   return $.ajax({
     url: config.apiOrigin + 'routines/' + id,
     method: 'PATCH',
@@ -48,9 +49,20 @@ const update = function (id, data) {
   })
 }
 
+const destroy = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + 'uploads/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   create,
   index,
   show,
-  update
+  update,
+  destroy
 }

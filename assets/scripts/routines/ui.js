@@ -38,7 +38,7 @@ const viewRoutineSuccess = function (routine) {
 
 const viewRoutineFailure = function (response) {
   console.error(response)
-  redNotification('Failed to show all routines')
+  redNotification('Failed to show routine')
 }
 
 const showEditSuccess = function (routine) {
@@ -48,7 +48,27 @@ const showEditSuccess = function (routine) {
 
 const showEditFailure = function (response) {
   console.error(response)
-  redNotification('Failed to show all routines')
+  redNotification('Failed to show routine')
+}
+
+const editRoutineSuccess = function (routine) {
+  console.log('edited!')
+  greenNotification('Routine edited successfully')
+}
+
+const editRoutineFailure = function (response) {
+  console.error(response)
+  redNotification('Failed to show edit routine')
+}
+
+const deleteRoutineSuccess = function (routine) {
+  console.log('deleted!')
+  greenNotification('Routine deleted successfully')
+}
+
+const deleteRoutineFailure = function (response) {
+  console.error(response)
+  redNotification('Failed to delete routine')
 }
 
 const viewMyRoutinesSuccess = function (routines) {
@@ -75,5 +95,9 @@ module.exports = {
   viewMyRoutinesSuccess,
   viewMyRoutinesFailure,
   showEditSuccess,
-  showEditFailure
+  showEditFailure,
+  editRoutineSuccess,
+  editRoutineFailure,
+  deleteRoutineSuccess,
+  deleteRoutineFailure
 }
