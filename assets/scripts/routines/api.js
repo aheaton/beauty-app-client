@@ -51,7 +51,7 @@ const update = function (id, data) {
 
 const destroy = function (id) {
   return $.ajax({
-    url: config.apiOrigin + 'uploads/' + id,
+    url: config.apiOrigin + 'routines/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

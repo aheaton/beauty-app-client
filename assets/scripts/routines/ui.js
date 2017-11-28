@@ -61,7 +61,7 @@ const editRoutineFailure = function (response) {
   redNotification('Failed to show edit routine')
 }
 
-const deleteRoutineSuccess = function (routine) {
+const deleteRoutineSuccess = function () {
   console.log('deleted!')
   greenNotification('Routine deleted successfully')
 }
