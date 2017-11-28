@@ -1,10 +1,11 @@
 <a id="edit-back-button" class="mr-3" aria-hidden="true" data-id="{{ routine._id }}"><i style="color: #43a1f7;" class="fa fa-arrow-left fa-2x m-2"></i></a>
 
   <div class="card-body" style="background-color: #f3f6f9">
-    <form class="mb-1" id="view-file">
+    <form class="mb-1" id="edit-routine">
       <ul class="list-group list-group-flush">
         <li class="list-group-item" style="background-color: #f3f6f9"><strong>Routine Type:</strong>
           <select class="form-control" id="routineType" name="routine[routineType]" required>
+            <option value="" selected disabled hidden>{{routine.routineType}}</option>
             <option>On-The-Go</option>
             <option>Every Day</option>
             <option>Night Out</option>
@@ -12,7 +13,44 @@
           </select>
         </li>
         <li class="list-group-item" style="background-color: #f3f6f9"><strong>Description:</strong>
-        <textarea rows="4" cols="50" class="form-control" id="description" name="routine[description]" placeholder="Description">{{upload.description}}</textarea>
+        <textarea rows="4" cols="50" class="form-control" id="description" name="routine[description]" placeholder="Description">{{routine.description}}</textarea>
+        </li>
+        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Face Shape:</strong>
+          <select class="form-control" id="faceShape" name="routine[faceShape]" required>
+            <option value="" selected disabled hidden>{{routine.faceShape}}</option>
+            <option>Diamond</option>
+            <option>Heart</option>
+            <option>Rectangular</option>
+            <option>Oval</option>
+            <option>Round</option>
+            <option>Square</option>
+          </select>
+        </li>
+        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Skin Type:</strong>
+          <select class="form-control" id="skinType" name="routine[skinType]" required>
+            <option value="" selected disabled hidden>{{routine.skinType}}</option>
+            <option>Dry</option>
+            <option>Oily</option>
+            <option>Combination</option>
+          </select>
+        </li>
+        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Eye Color:</strong>
+          <select class="form-control" id="eyeColor" name="routine[eyeColor]" required>
+            <option value="" selected disabled hidden>{{routine.eyeColor}}</option>
+            <option>Blue</option>
+            <option>Brown</option>
+            <option>Hazel</option>
+            <option>Green</option>
+            <option>Amber</option>
+            <option>Gray</option>
+          </select>
+        </li>
+        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Process:</strong>
+          <textarea class="form-control" id="process" rows="15" name="routine[process]" required>{{routine.process}}</textarea>
+        </li>
+        <button type="button" class="btn btn-secondary" name="cancel">Cancel</button>
+        <br>
+        <button type="submit" class="btn btn-primary">Edit & Post Routine</button>
       </ul>
     </form>
   </div>

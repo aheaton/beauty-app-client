@@ -6,6 +6,7 @@ const redNotification = require('../shared/ui').redNotification
 const allRoutinesHandlebar = require('../templates/allRoutines.handlebars')
 const allMyRoutinesHandlebar = require('../templates/allMyRoutines.handlebars')
 const showRoutineHandlebar = require('../templates/showRoutine.handlebars')
+const editRoutineHandlebar = require('../templates/editRoutine.handlebars')
 
 const addRoutineSuccess = function (data) {
   console.log('success!')
@@ -40,6 +41,16 @@ const viewRoutineFailure = function (response) {
   redNotification('Failed to show all routines')
 }
 
+const showEditSuccess = function (routine) {
+  $('.edit-routine-container').empty()
+  $('.edit-routine-container').html(editRoutineHandlebar(routine))
+}
+
+const showEditFailure = function (response) {
+  console.error(response)
+  redNotification('Failed to show all routines')
+}
+
 const viewMyRoutinesSuccess = function (routines) {
   $('.view-my-routines').empty()
   console.log('success!')
@@ -62,5 +73,7 @@ module.exports = {
   viewRoutineSuccess,
   viewRoutineFailure,
   viewMyRoutinesSuccess,
-  viewMyRoutinesFailure
+  viewMyRoutinesFailure,
+  showEditSuccess,
+  showEditFailure
 }

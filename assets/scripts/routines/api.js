@@ -37,9 +37,9 @@ const show = function (id) {
   })
 }
 
-const update = function (data) {
+const update = function (id, data) {
   return $.ajax({
-    url: config.apiOrigin + 'routines/' + store.routineId,
+    url: config.apiOrigin + 'routines/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

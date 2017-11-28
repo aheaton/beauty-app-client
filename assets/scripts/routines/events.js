@@ -41,16 +41,23 @@ const onViewRoutines = function () {
     .catch(ui.viewRoutinesFailure)
 }
 
-const onEditRoutine = function (id) {
-  api.update(id)
-    .then(ui.editRoutineSuccess)
+// const onEditRoutine = function (id, event) {
+//   const data = getFormFields(event.target)
+//   api.update(id, data)
+//     .then(ui.editRoutineSuccess)
+//     .catch(ui.viewRoutineFailure)
+// }
+
+const onShowEdit = function (id) {
+  api.show(id)
+    .then(ui.showEditSuccess)
     .then(() => {
       $('#edit-back-button').on('click', () => {
         $('.edit-routine-container').hide()
         $('.view-my-routines').show()
       })
     })
-    .catch(ui.viewRoutineFailure)
+    .catch(ui.showEditFailure)
 }
 
 const filterRoutines = function (array) {
@@ -73,7 +80,7 @@ const onViewMyRoutines = function () {
     .then((response) => {
       $('.edit-routine-link').on('click', (event) => {
         event.preventDefault()
-        onEditRoutine($(event.target).attr('data-id'))
+        onShowEdit($(event.target).attr('data-id'))
       })
     })
     .catch(ui.viewMyRoutinesFailure)
