@@ -11,7 +11,6 @@ const signInSuccess = function (data) {
   greenNotification('Signed in successfully')
   $('body').removeClass('background')
   $('#nav-tabs').show()
-  // $('.add-routine-button').show()
 }
 
 const signInFailure = function () {
@@ -55,6 +54,8 @@ const signOutSuccess = function () {
   $('#addRoutine').hide()
   $('#nav-tabs').hide()
   $('.all-routines-container').empty()
+  $('.view-my-routines').empty()
+  $('.edit-routine-container').empty()
   $('#sign-in-div').show()
   greenNotification('Signed out successfully')
 }

@@ -113,13 +113,13 @@
 
     <ul id="nav-tabs" class="nav nav-tabs nav-fill" style="display: none;">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#trending" role="tab">Trending</a>
+        <a class="nav-link active" data-toggle="tab" id="trending-click" href="#trending" role="tab">Trending</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#favorites" role="tab">My Favorites</a>
+        <a class="nav-link" data-toggle="tab" id="addpost-click" href="#addpost" role="tab">Add Post</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#myposts" role="tab">My Posts</a>
+        <a class="nav-link" data-toggle="tab" id="myposts-click" href="#myposts" role="tab">My Posts</a>
       </li>
     </ul>
 
@@ -127,80 +127,12 @@
       <!-- Trending Tab -->
       <div class="tab-pane active all-routines-container" id="trending" role="tabpanel"></div>
       <!-- Favorites Tab -->
-      <div class="tab-pane" id="favorites" role="tabpanel">
-        Your favorites will be shown here.
+      <div class="tab-pane add-routine-container" id="addpost" role="tabpanel">
       </div>
       <!-- My Posts Tab for adds and edits -->
       <div class="tab-pane view-my-routines" id="myposts" role="tabpanel"></div>
     </div>
 
-    <!-- Add Routine Form -->
-    <form id="addRoutine" style="display: none;">
-      <h2>Add a New Routine</h2>
-      <p>Share your beauty tips with the world!</p>
-      <div class="form-group">
-        <label for="routineType">Routine Type</label>
-        <select class="form-control" id="routineType" name="routine[routineType]" required>
-          <option value="" selected disabled hidden>-Please Select-</option>
-          <option>On-The-Go</option>
-          <option>Every Day</option>
-          <option>Night Out</option>
-          <option>Special Occasion</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="description">Short Description</label>
-        <textarea class="form-control" id="description" rows="3" name="routine[description]" required></textarea>
-      </div>
-      <!-- <div class="form-group">
-        <label for="photoLink">Link to Photo</label>
-        <input class="form-control" id="photoLink" name="routine[photoLink]" required></input>
-      </div> -->
-      <!-- <div class="form-group">
-        <label for="photoUpload">Photo Upload</label>
-        <input type="file" class="form-control-file" id="photoUpload" aria-describedby="photoUpload" name="routine[photoUpload]" required>
-      </div> -->
-
-      <div class="form-group">
-        <label for="faceShape">Face Shape</label>
-        <select class="form-control" id="faceShape" name="routine[faceShape]" required>
-          <option value="" selected disabled hidden>-Please Select-</option>
-          <option>Diamond</option>
-          <option>Heart</option>
-          <option>Rectangular</option>
-          <option>Oval</option>
-          <option>Round</option>
-          <option>Square</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="skinType">Skin Type</label>
-        <select class="form-control" id="skinType" name="routine[skinType]" required>
-          <option value="" selected disabled hidden>-Please Select-</option>
-          <option>Dry</option>
-          <option>Oily</option>
-          <option>Combination</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="eyeColor">Eye Color</label>
-        <select class="form-control" id="eyeColor" name="routine[eyeColor]" required>
-          <option value="" selected disabled hidden>-Please Select-</option>
-          <option>Blue</option>
-          <option>Brown</option>
-          <option>Hazel</option>
-          <option>Green</option>
-          <option>Amber</option>
-          <option>Gray</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="process">My Process</label>
-        <textarea class="form-control" id="process" rows="15" name="routine[process]" required></textarea>
-      </div>
-      <button type="button" class="btn btn-secondary" name="cancel">Cancel</button>
-      <button type="submit" class="btn btn-primary">Post Routine</button>
-    </form>
 
 
   <div class="show-routine-container"></div>

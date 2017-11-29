@@ -14,6 +14,12 @@ const onAddRoutine = function (event) {
   console.log('this is the data', data)
   api.create(data)
     .then(ui.addRoutineSuccess)
+    .then(onViewMyRoutines)
+    .then(() => {
+      $('#addRoutine').hide()
+      $('.view-my-routines').show()
+    })
+    .then(onViewRoutines)
     .catch(ui.addRoutineFailure)
 }
 
@@ -32,6 +38,8 @@ const onViewRoutine = function (id) {
 const onDeleteRoutine = function (id) {
   api.destroy(id)
     .then(ui.deleteRoutineSuccess)
+    .then(onViewMyRoutines)
+    .then(onViewRoutines)
     .catch(ui.deleteRoutineFailure)
 }
 
@@ -44,6 +52,9 @@ const onViewRoutines = function () {
         onViewRoutine($(event.target).attr('data-id'))
       })
     })
+    .then(() => {
+      $('#addRoutine').on('submit', onAddRoutine)
+    })
     .catch(ui.viewRoutinesFailure)
 }
 
@@ -51,6 +62,12 @@ const onEditRoutine = function (id, data) {
   console.log('this is the edit data', data)
   api.update(id, data)
     .then(ui.editRoutineSuccess)
+    .then(() => {
+      onViewMyRoutines()
+      $('.view-my-routines').show()
+      $('.edit-routine-container').empty()
+    })
+    .then(onViewRoutines)
     .catch(ui.editRoutineFailure)
 }
 
@@ -58,16 +75,26 @@ const onShowEdit = function (id) {
   api.show(id)
     .then(ui.showEditSuccess)
     .then(() => {
-      $('#edit-back-button').on('click', () => {
-        $('.edit-routine-container').hide()
-        $('.view-my-routines').show()
+      $('#edit-routine').on('submit', (event) => {
+        event.preventDefault()
+        const data = getFormFields(event.target)
+        onEditRoutine($(event.target).attr('data-id'), data)
       })
     })
     .then(() => {
-      $('#edit-routine').on('submit', (event) => {
-        console.log('this is the event.target', event.target)
-        const data = getFormFields(event.target)
-        onEditRoutine($(event.target).attr('data-id'), data)
+      $('.edit-routine-cancel').on('click', (event) => {
+        event.preventDefault()
+        onViewMyRoutines()
+        $('.view-my-routines').show()
+        $('.edit-routine-container').empty()
+      })
+    })
+    .then(() => {
+      $('#edit-back-button').on('click', (event) => {
+        event.preventDefault()
+        onViewMyRoutines()
+        $('.view-my-routines').show()
+        $('.edit-routine-container').empty()
       })
     })
     .catch(ui.showEditFailure)
@@ -96,17 +123,35 @@ const onViewMyRoutines = function () {
         onShowEdit($(event.target).attr('data-id'))
       })
     })
-    .then((response) => {
+    .then(() => {
+      $('.delete-routine-link').unbind('click')
       $('.delete-routine-link').on('click', (event) => {
+        onDeleteClick()
+        const routineId = event.target.getAttribute('data-id')
+        store.routineId = routineId
+      })
+    })
+    .then(() => {
+      $('#delete-routine-confirm').unbind('click')
+      $('#delete-routine-confirm').on('click', (event) => {
         event.preventDefault()
-        onDeleteRoutine($(event.target).attr('data-id'))
+        onDeleteRoutine(store.routineId)
       })
     })
     .catch(ui.viewMyRoutinesFailure)
 }
 
+const onDeleteClick = function () {
+  event.stopPropagation()
+  ui.showDeleteModal()
+}
+
+const onShowAddForm = function () {
+  $('.add-routine-container').show()
+  console.log('here')
+}
+
 const addHandlers = function () {
-  $('#addRoutine').on('submit', onAddRoutine)
 }
 
 module.exports = {
@@ -114,5 +159,7 @@ module.exports = {
   onViewRoutines,
   onViewRoutine,
   filterRoutines,
-  onViewMyRoutines
+  onViewMyRoutines,
+  onDeleteClick,
+  onShowAddForm
 }

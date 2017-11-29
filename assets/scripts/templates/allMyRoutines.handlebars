@@ -1,4 +1,5 @@
 <!-- show post layout -->
+
 {{#if routines}}
 
 {{#each routines as |routine|}}
@@ -11,28 +12,16 @@
         </div>
 
   <div class="card__content card__padding">
-<!--
-    <div class="card__meta">
-    <time>17th March</time>
-    </div> -->
 
     <article class="card__article">
       <h2><a href="#" class="edit-routine-link" data-id="{{routine._id}}">{{routine.routineType}}</a></h2>
 
       <p>{{routine.description}}</p>
       <a href="#" class="edit-routine-link" data-id="{{routine._id}}">Edit</a>
-      <a href="#" class="delete-routine-link" data-id="{{routine._id}}">Delete</a>
+      <a href="#" class="delete-routine-link" data-id="{{routine._id}}" data-toggle="modal" href="#confirmDeleteModal">Delete</a>
     </article>
   </div>
 
-  <!-- <div class="card__action">
-
-    <div class="card__author">
-      <div class="card__author-content">
-        By <a href="#">Alicia Heaton</a>
-      </div>
-    </div>
-  </div> -->
   </div>
 
   {{/each}}
@@ -41,4 +30,24 @@
       <p class="noRoutinesMessage">No routines currently posted. Add a routine to start it up!</p>
     {{/if}}
 
-    <button type="button" class="btn btn-primary add-routine-button">Add Your Routine</button>
+
+    <!-- Confirm deletion modal -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: none">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Delete Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Are you sure that you want to delete this post?</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="delete-routine-confirm">Yes</button>
+                    <button type="button" class="btn btn-secondary delete-modal-cancel" data-dismiss="modal">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
