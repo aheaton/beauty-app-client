@@ -16,18 +16,15 @@ const addRoutineSuccess = function (data) {
 }
 
 const addRoutineFailure = function (response) {
-  console.error(response)
   redNotification('Failed to add routine')
 }
 
 const viewRoutinesSuccess = function (routines) {
   $('.all-routines-container').empty()
-  console.log('success!')
   $('.all-routines-container').html(allRoutinesHandlebar(routines))
 }
 
 const viewRoutinesFailure = function (response) {
-  console.error(response)
   redNotification('Failed to show all routines')
 }
 
@@ -38,7 +35,6 @@ const viewRoutineSuccess = function (routine) {
 }
 
 const viewRoutineFailure = function (response) {
-  console.error(response)
   redNotification('Failed to show routine')
 }
 
@@ -49,23 +45,19 @@ const showEditSuccess = function (routine) {
 }
 
 const showEditFailure = function (response) {
-  console.error(response)
   redNotification('Failed to show routine')
 }
 
 const editRoutineSuccess = function (routine) {
-  console.log('edited!')
   greenNotification('Routine edited successfully')
   $('#myposts-click').click()
 }
 
 const editRoutineFailure = function (response) {
-  console.error(response)
   redNotification('Failed to show edit routine')
 }
 
 const deleteRoutineSuccess = function () {
-  console.log('deleted!')
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   greenNotification('Routine deleted successfully')
@@ -74,7 +66,6 @@ const deleteRoutineSuccess = function () {
 }
 
 const deleteRoutineFailure = function (response) {
-  console.error(response)
   $('body').removeClass('modal-open')
   $('.modal-backdrop').remove()
   redNotification('Failed to delete routine')
@@ -83,13 +74,11 @@ const deleteRoutineFailure = function (response) {
 const viewMyRoutinesSuccess = function (routines) {
   $('.view-my-routines').empty()
   $('.edit-routine-container').empty()
-  console.log('success!')
   $('.view-my-routines').html(allMyRoutinesHandlebar(routines))
   $('.view-my-routines').show()
 }
 
 const viewMyRoutinesFailure = function (response) {
-  console.error(response)
   redNotification('Failed to show all your routines')
 }
 

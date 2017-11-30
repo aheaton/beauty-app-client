@@ -4,7 +4,6 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const create = function (data) {
-  console.log('got to Ajax request')
   return $.ajax({
     url: config.apiOrigin + 'routines',
     method: 'POST',
@@ -36,7 +35,6 @@ const show = function (id) {
 }
 
 const update = function (id, data) {
-  console.log('id passed into edit', id)
   return $.ajax({
     url: config.apiOrigin + 'routines/' + id,
     method: 'PATCH',

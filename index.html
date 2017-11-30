@@ -15,18 +15,18 @@
     <body class="container-fluid">
 
       <!-- nav-bar -->
-      <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #fddcec;">
-        <span class="navbar-brand"><img src="https://i.imgur.com/mOHWsc3.png" style="width: 32px; height: 32px;">Beauty Like You</span>
+      <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #000;">
+        <span class="navbar-brand" style="color: red;"><img src="https://i.imgur.com/mOHWsc3.png" style="width: 32px; height: 32px;">Beauty Like You</span>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <div class="navbar-toggler-icon"></div>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav">
             <li class="active-after-signin nav-item" style="display: none;">
-              <a class="nav-link" id="change-password-form">Change Password</a>
+              <a class="nav-link" id="change-password-form" style="color: white;">Change Password</a>
             </li>
             <li class="active-after-signin nav-item active" style="display: none;">
-              <a class="nav-link" id="sign-out">Sign Out</a>
+              <a class="nav-link" id="sign-out" style="color: white;">Sign Out</a>
             </li>
           </ul>
         </div>
@@ -40,7 +40,7 @@
         <div class="row justify-content-center mt-1" id="sign-in-div" style="display: none;">
           <div class="col-12 col-md-8 col-xl-6">
             <form class="mb-1" id="sign-in">
-              <h3>Sign In</h3>
+              <h2>Sign In</h2>
               <div class="form-group">
                 <label for="sign-in-email">Email</label>
                 <input type="email" class="form-control" id="sign-in-email" name="credentials[email]" placeholder="name@example.com" required>
@@ -112,13 +112,13 @@
         </div>
 
     <ul id="nav-tabs" class="nav nav-tabs nav-fill" style="display: none;">
-      <li class="nav-item">
+      <li class="nav-item tab-style">
         <a class="nav-link active" data-toggle="tab" id="trending-click" href="#trending" role="tab">Trending</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item tab-style">
         <a class="nav-link" data-toggle="tab" id="addpost-click" href="#addpost" role="tab">Add Post</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item tab-style">
         <a class="nav-link" data-toggle="tab" id="myposts-click" href="#myposts" role="tab">My Posts</a>
       </li>
     </ul>

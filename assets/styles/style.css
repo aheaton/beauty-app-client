@@ -1,8 +1,22 @@
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 @import 'https://fonts.googleapis.com/css?family=Roboto:700,400';
+@import 'https://fonts.googleapis.com/css?family=Dancing+Script';
+@import 'https://fonts.googleapis.com/css?family=Coustard';
+
 /*
 *  Basic Reset
 */
+
+body {
+  background-attachment: fixed;
+  background-color: white;
+  background-image: url(https://i.imgur.com/uVJxNoQ.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
 
 *,
 *:after,
@@ -12,15 +26,7 @@
 	box-sizing: border-box;
 }
 
-/**
- * Basics Styles
- */
-html {
-	font-size: 62.5%;
-}
 body {
-	background-color: #eee;
-	font-family: Roboto;
 	font-weight: 400;
 	font-size: 1.6em;
 	line-height: 1.6;
@@ -30,6 +36,7 @@ body {
 h2 {
 	line-height: 1.2;
 	margin-bottom: 1.6rem;
+  color: white;
 }
 
 .wrapper {
@@ -65,7 +72,6 @@ h2 {
  */
 
 .card {
-	background-color: #fff;
 }
 
 .card__padding {
@@ -84,14 +90,10 @@ h2 {
 
 .card__content {
 	position: relative;
+  background-color: #eee;
+  font-family: 'Coustard', serif;
 }
 
-/* card meta */
-.card__meta time {
-	font-size: 1.5rem;
-	color: #bbb;
-	margin-left: 0.8rem;
-}
 
 /* card article */
 .card__article a {
@@ -134,6 +136,44 @@ h2 {
   padding-top: 10px;
 }
 
-.add-routine-button {
-  margin: 20px;
+.navbar-brand {
+  font-family: 'Dancing Script', cursive;
+}
+
+#sign-in-div, #sign-up-div {
+  font-family: 'Coustard', serif;
+  padding-top: 75px;
+  margin: 30px;
+  color: white;
+}
+
+label {
+  color: white;
+}
+
+.nav-link {
+  font-family: 'Coustard', serif;
+  color: white;
+}
+
+.nav-tabs{
+  background-color:#161616;
+}
+
+.nav-tabs > li > a{
+  border: medium none;
+}
+.nav-tabs > li > a:hover{
+  background-color: #303136 !important;
+    border-radius: 0;
+    color:#fff;
+}
+
+#addRoutine {
+  font-family: 'Coustard', serif;
+  color: white;
+}
+
+#changePasswordModal {
+  color: black;
 }

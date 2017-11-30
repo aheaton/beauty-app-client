@@ -8,7 +8,6 @@ const store = require('../store')
 
 const onAddRoutine = function (event) {
   event.preventDefault()
-  console.log('on add routine')
   const data = getFormFields(event.currentTarget)
   api.create(data)
     .then(ui.addRoutineSuccess)
@@ -45,7 +44,6 @@ const onViewRoutines = function () {
 }
 
 const onEditRoutine = function (id, data) {
-  console.log('this is the edit data', data)
   api.update(id, data)
     .then(ui.editRoutineSuccess)
     .catch(ui.editRoutineFailure)

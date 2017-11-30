@@ -35,7 +35,6 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function (response) {
-  console.error(response)
   redNotification('Failed to sign up')
 }
 
