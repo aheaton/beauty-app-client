@@ -22,6 +22,7 @@ const addRoutineFailure = function (response) {
 const viewRoutinesSuccess = function (routines) {
   $('.all-routines-container').empty()
   $('.all-routines-container').html(allRoutinesHandlebar(routines))
+  $('.all-routines-container').show()
 }
 
 const viewRoutinesFailure = function (response) {

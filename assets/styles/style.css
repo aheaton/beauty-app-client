@@ -147,10 +147,6 @@ h2 {
   color: white;
 }
 
-label {
-  color: white;
-}
-
 .nav-link {
   font-family: 'Coustard', serif;
   color: white;
@@ -169,11 +165,11 @@ label {
     color:#fff;
 }
 
-#addRoutine {
+#addRoutine, #edit-routine, #show-routine {
   font-family: 'Coustard', serif;
   color: white;
 }
 
-#changePasswordModal {
-  color: black;
+#changePasswordModal, #confirmDeleteModal {
+  font-family: 'Coustard', serif;
 }

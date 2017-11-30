@@ -14,6 +14,7 @@ $(() => {
   $('#sign-in-div').show()
   $('#trending-click').click(function (event) {
     event.preventDefault()
+    $('.show-routine-container').empty()
     $('.add-routine-container').empty()
     $('.edit-routine-container').empty()
     $('.view-my-routines').empty()

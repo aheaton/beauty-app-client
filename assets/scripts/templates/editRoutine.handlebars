@@ -1,60 +1,64 @@
-<a id="edit-back-button" class="mr-3" aria-hidden="true" data-id="{{ routine._id }}"><i style="color: #43a1f7;" class="fa fa-arrow-left fa-2x m-2"></i></a>
+<a id="edit-back-button" class="mr-3" aria-hidden="true" data-id="{{ routine._id }}"><i style="color: white" class="fa fa-arrow-left fa-2x m-2"></i></a>
 
-  <div class="card-body" style="background-color: #f3f6f9">
-    <form class="mb-1" id="edit-routine" data-id="{{ routine._id }}">
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Routine Type:</strong>
-          <select class="form-control" id="routineType" name="routine[routineType]" required>
-            <option style="display:none;" selected>{{routine.routineType}}</option>
-            <option>On-The-Go</option>
-            <option>Every Day</option>
-            <option>Night Out</option>
-            <option>Special Occasion</option>
-          </select>
-        </li>
-        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Description:</strong>
-        <textarea rows="4" cols="50" class="form-control" id="description" name="routine[description]" placeholder="Description">{{routine.description}}</textarea>
-        </li>
-        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Photo URL:</strong>
-        <p><i>Please use the extension in the URL such as .png or .jpg</i></p>
-        <textarea rows="1" cols="50" class="form-control" id="photoURL" name="routine[photoURL]" placeholder="Photo URL">{{routine.photoURL}}</textarea>
-        </li>
-        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Face Shape:</strong>
-          <select class="form-control" id="faceShape" name="routine[faceShape]" required>
-            <option style="display:none;" selected>{{routine.faceShape}}</option>
-            <option>Diamond</option>
-            <option>Heart</option>
-            <option>Rectangular</option>
-            <option>Oval</option>
-            <option>Round</option>
-            <option>Square</option>
-          </select>
-        </li>
-        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Skin Type:</strong>
-          <select class="form-control" id="skinType" name="routine[skinType]" required>
-            <option style="display:none;" selected>{{routine.skinType}}</option>
-            <option>Dry</option>
-            <option>Oily</option>
-            <option>Combination</option>
-          </select>
-        </li>
-        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Eye Color:</strong>
-          <select class="form-control" id="eyeColor" name="routine[eyeColor]" required>
-            <option style="display:none;" selected>{{routine.eyeColor}}</option>
-            <option>Blue</option>
-            <option>Brown</option>
-            <option>Hazel</option>
-            <option>Green</option>
-            <option>Amber</option>
-            <option>Gray</option>
-          </select>
-        </li>
-        <li class="list-group-item" style="background-color: #f3f6f9"><strong>Process:</strong>
-          <textarea class="form-control" id="process" rows="15" name="routine[process]" required>{{routine.process}}</textarea>
-        </li>
-        <button type="button" class="btn btn-secondary edit-routine-cancel">Cancel</button>
-        <br>
-        <button type="submit" class="btn btn-primary" id="edit-routine-button">Edit & Post Routine</button>
-      </ul>
-    </form>
+<!-- Edit Routine Form -->
+<form id="edit-routine" data-id="{{ routine._id }}">
+  <h2>Edit Your Routine</h2>
+  <div class="form-group">
+    <label for="routineType">Routine Type</label>
+    <select class="form-control" id="routineType" name="routine[routineType]" required>
+      <option style="display:none;" selected>{{routine.routineType}}</option>
+      <option>On-The-Go</option>
+      <option>Every Day</option>
+      <option>Night Out</option>
+      <option>Special Occasion</option>
+    </select>
   </div>
+  <div class="form-group">
+    <label for="description">Short Description</label>
+    <textarea class="form-control" id="description" rows="3" name="routine[description]" required>{{routine.description}}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="photoURL">Photo URL</label>
+    <p><i>Please use the extension in the URL such as .png or .jpg</i></p>
+    <textarea rows="1" class="form-control" id="photoURL" name="routine[photoURL]" required>{{routine.photoURL}}</textarea>
+  </div>
+  <div class="form-group">
+    <label for="faceShape">Face Shape</label>
+    <select class="form-control" id="faceShape" name="routine[faceShape]" required>
+      <option style="display:none;" selected>{{routine.faceShape}}</option>
+      <option>Diamond</option>
+      <option>Heart</option>
+      <option>Rectangular</option>
+      <option>Oval</option>
+      <option>Round</option>
+      <option>Square</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="skinType">Skin Type</label>
+    <select class="form-control" id="skinType" name="routine[skinType]" required>
+      <option style="display:none;" selected>{{routine.skinType}}</option>
+      <option>Dry</option>
+      <option>Oily</option>
+      <option>Combination</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="eyeColor">Eye Color</label>
+    <select class="form-control" id="eyeColor" name="routine[eyeColor]" required>
+      <option style="display:none;" selected>{{routine.eyeColor}}</option>
+      <option>Blue</option>
+      <option>Brown</option>
+      <option>Hazel</option>
+      <option>Green</option>
+      <option>Amber</option>
+      <option>Gray</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="process">My Process</label>
+    <textarea class="form-control" id="process" rows="10" name="routine[process]" required>{{routine.process}}</textarea>
+  </div>
+  <button type="submit" class="btn btn-primary pull-right" id="edit-routine-button" style="margin-left: 5px;">Edit & Post Routine</button>
+  <button type="button" class="btn btn-secondary edit-routine-cancel pull-right">Cancel</button>
+</form>
