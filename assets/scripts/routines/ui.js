@@ -10,9 +10,9 @@ const editRoutineHandlebar = require('../templates/editRoutine.handlebars')
 const addRoutineHandlebar = require('../templates/addRoutine.handlebars')
 
 const addRoutineSuccess = function (data) {
-  console.log('success!')
   greenNotification('Added routine successfully')
   $('.add-routine-container').empty()
+  $('#myposts-click').click()
 }
 
 const addRoutineFailure = function (response) {
@@ -24,6 +24,7 @@ const viewRoutinesSuccess = function (routines) {
   $('.all-routines-container').empty()
   console.log('success!')
   $('.all-routines-container').html(allRoutinesHandlebar(routines))
+  $('.all-routines-container').show()
   $('.add-routine-container').html(addRoutineHandlebar())
 }
 
@@ -66,12 +67,17 @@ const editRoutineFailure = function (response) {
 
 const deleteRoutineSuccess = function () {
   console.log('deleted!')
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   greenNotification('Routine deleted successfully')
   $('#confirmDeleteModal').modal('hide')
+  $('#myposts-click').click()
 }
 
 const deleteRoutineFailure = function (response) {
   console.error(response)
+  $('body').removeClass('modal-open')
+  $('.modal-backdrop').remove()
   redNotification('Failed to delete routine')
 }
 
@@ -79,6 +85,7 @@ const viewMyRoutinesSuccess = function (routines) {
   $('.view-my-routines').empty()
   console.log('success!')
   $('.view-my-routines').html(allMyRoutinesHandlebar(routines))
+  $('.view-my-routines').show()
   $('.add-routine-container').html(addRoutineHandlebar())
 }
 

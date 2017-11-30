@@ -8,17 +8,10 @@ const store = require('../store')
 
 const onAddRoutine = function (event) {
   event.preventDefault()
-  console.log('got to event handler', event.target)
+  console.log('on add routine')
   const data = getFormFields(event.currentTarget)
-  console.log('this is the data', data)
   api.create(data)
     .then(ui.addRoutineSuccess)
-    .then(onViewMyRoutines)
-    .then(() => {
-      $('#addRoutine').hide()
-      $('.view-my-routines').show()
-    })
-    .then(onViewRoutines)
     .catch(ui.addRoutineFailure)
 }
 
@@ -37,22 +30,17 @@ const onViewRoutine = function (id) {
 const onDeleteRoutine = function (id) {
   api.destroy(id)
     .then(ui.deleteRoutineSuccess)
-    .then(onViewMyRoutines)
-    .then(onViewRoutines)
     .catch(ui.deleteRoutineFailure)
 }
 
 const onViewRoutines = function () {
-  api.index()
+  return api.index()
     .then(ui.viewRoutinesSuccess)
     .then((response) => {
       $('.show-routine-link').on('click', (event) => {
         event.preventDefault()
         onViewRoutine($(event.target).attr('data-id'))
       })
-    })
-    .then(() => {
-      $('#addRoutine').on('submit', onAddRoutine)
     })
     .catch(ui.viewRoutinesFailure)
 }
@@ -111,7 +99,7 @@ const filterRoutines = function (array) {
 }
 
 const onViewMyRoutines = function () {
-  api.index()
+  return api.index()
     .then((response) => {
       return { routines: filterRoutines(response) }
     })
@@ -147,7 +135,7 @@ const onDeleteClick = function () {
 
 const onShowAddForm = function () {
   $('.add-routine-container').show()
-  console.log('here')
+  $('#addRoutine').on('submit', onAddRoutine)
 }
 
 const addHandlers = function () {

@@ -166,10 +166,6 @@ h2 {
   padding-top: 10px;
 }
 
-option:checked {
-    display: none;
-}
-
 .add-routine-button {
   margin: 20px;
 }
