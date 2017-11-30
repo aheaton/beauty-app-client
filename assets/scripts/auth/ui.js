@@ -11,6 +11,9 @@ const signInSuccess = function (data) {
   greenNotification('Signed in successfully')
   $('body').removeClass('background')
   $('#nav-tabs').show()
+  $('#trending-click').addClass('active')
+  $('#addpost-click').removeClass('active')
+  $('#myposts-click').removeClass('active')
 }
 
 const signInFailure = function () {

@@ -21,7 +21,6 @@ const addRoutineFailure = function (response) {
 }
 
 const viewRoutinesSuccess = function (routines) {
-  console.log('is this an array?', routines)
   $('.all-routines-container').empty()
   console.log('success!')
   $('.all-routines-container').html(allRoutinesHandlebar(routines))

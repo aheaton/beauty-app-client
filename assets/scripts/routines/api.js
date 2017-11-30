@@ -12,8 +12,6 @@ const create = function (data) {
       Authorization: 'Token token=' + store.user.token
     },
     data: data
-    // contentType: false,
-    // processData: false
   })
 }
 

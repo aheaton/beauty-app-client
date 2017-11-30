@@ -7,17 +7,12 @@
 
 <div class="card radius shadowDepth1">
   <div class="card__image border-tlr-radius">
-    <img src="https://i.imgur.com/jYa1WDz.jpg" alt="image" class="border-tlr-radius">
+    <img src="{{routine.photoURL}}" alt="image" class="border-tlr-radius">
         </div>
 
   <div class="card__content card__padding">
             <div class="card__share">
-
             </div>
-<!--
-    <div class="card__meta">
-    <time>17th March</time>
-    </div> -->
 
     <article class="card__article">
       <h2><a href="#" class="show-routine-link" data-id="{{routine._id}}">{{routine.routineType}}</a></h2>
@@ -26,16 +21,8 @@
       <a href="#" class="show-routine-link" data-id="{{routine._id}}">View Routine</a>
     </article>
   </div>
-
-  <!-- <div class="card__action">
-
-    <div class="card__author">
-      <div class="card__author-content">
-        By <a href="#">Alicia Heaton</a>
-      </div>
-    </div>
-  </div> -->
   </div>
+</div>
 
   {{/each}}
 

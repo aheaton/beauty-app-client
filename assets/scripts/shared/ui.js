@@ -1,13 +1,8 @@
 'use strict'
 
-// const clearForm = function (id) {
-//   $(id)[0].reset()
-// }
-//
-// const showHomePage = function () {
-//   $('#fileView').hide()
-//   $('#home-page').show()
-// }
+const clearForm = function (id) {
+  $(id)[0].reset()
+}
 
 const greenNotification = function (text, time = 1000, isDismissable = false) {
   $.notify({
@@ -58,8 +53,7 @@ const redNotification = function (text, time = 1000, isDismissable = false) {
 }
 
 module.exports = {
-  // clearForm,
-  // showHomePage,
+  clearForm,
   greenNotification,
   redNotification
 }
