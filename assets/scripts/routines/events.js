@@ -95,6 +95,7 @@ const onViewMyRoutines = function () {
       $('.edit-routine-link').on('click', (event) => {
         event.preventDefault()
         onShowEdit($(event.target).attr('data-id'))
+        $('html, body').scrollTop(0)
       })
     })
     .then(() => {

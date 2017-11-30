@@ -154,6 +154,7 @@ h2 {
 
 .nav-tabs{
   background-color:#161616;
+  width: 100vw;
 }
 
 .nav-tabs > li > a{
@@ -165,6 +166,10 @@ h2 {
     color:#fff;
 }
 
+.navbar {
+  width: 100vw;
+}
+
 #addRoutine, #edit-routine, #show-routine {
   font-family: 'Coustard', serif;
   color: white;
@@ -172,4 +177,19 @@ h2 {
 
 #changePasswordModal, #confirmDeleteModal {
   font-family: 'Coustard', serif;
+}
+
+.edit-form {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.add-form {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.show-routine-card {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }

@@ -18,8 +18,11 @@
               <h2><a href="#" class="edit-routine-link" data-id="{{routine._id}}">{{routine.routineType}}</a></h2>
 
               <p>{{routine.description}}</p>
-              <a href="#" class="edit-routine-link"><i style="color: black" class="fa fa-flag fa-pencil fa-2x mr-2" data-id="{{routine._id}}"></i></a>
+
+              <div class="row justify-content-center">
+              <a href="#" class="edit-routine-link"><i style="color: black" class="fa fa-flag fa-pencil fa-2x mr-3" data-id="{{routine._id}}"></i></a>
               <a href="#" class="delete-routine-link" data-toggle="modal" href="#confirmDeleteModal"><i style="color: black" class="fa fa-flag fa-trash fa-2x" data-id="{{routine._id}}"></i></a>
+              </div>
             </article>
           </div>
 
