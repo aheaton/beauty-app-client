@@ -24,8 +24,6 @@ const viewRoutinesSuccess = function (routines) {
   $('.all-routines-container').empty()
   console.log('success!')
   $('.all-routines-container').html(allRoutinesHandlebar(routines))
-  $('.all-routines-container').show()
-  $('.add-routine-container').html(addRoutineHandlebar())
 }
 
 const viewRoutinesFailure = function (response) {
@@ -58,6 +56,7 @@ const showEditFailure = function (response) {
 const editRoutineSuccess = function (routine) {
   console.log('edited!')
   greenNotification('Routine edited successfully')
+  $('#myposts-click').click()
 }
 
 const editRoutineFailure = function (response) {
@@ -83,10 +82,10 @@ const deleteRoutineFailure = function (response) {
 
 const viewMyRoutinesSuccess = function (routines) {
   $('.view-my-routines').empty()
+  $('.edit-routine-container').empty()
   console.log('success!')
   $('.view-my-routines').html(allMyRoutinesHandlebar(routines))
   $('.view-my-routines').show()
-  $('.add-routine-container').html(addRoutineHandlebar())
 }
 
 const viewMyRoutinesFailure = function (response) {
@@ -96,6 +95,10 @@ const viewMyRoutinesFailure = function (response) {
 
 const showDeleteModal = function () {
   $('#confirmDeleteModal').modal('show')
+}
+
+const onShowAddTab = function () {
+  $('.add-routine-container').html(addRoutineHandlebar())
 }
 
 module.exports = {
@@ -113,5 +116,6 @@ module.exports = {
   editRoutineFailure,
   deleteRoutineSuccess,
   deleteRoutineFailure,
-  showDeleteModal
+  showDeleteModal,
+  onShowAddTab
 }

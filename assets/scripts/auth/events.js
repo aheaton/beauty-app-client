@@ -4,15 +4,12 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 
 const api = require('./api')
 const ui = require('./ui')
-const routineEvents = require('../routines/events')
 
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.signIn(data)
     .then(ui.signInSuccess)
-    .then(routineEvents.onViewRoutines) // this loads all users' routines
-    .then(routineEvents.onViewMyRoutines) // this will load the user's routines but they will not show until the My Posts tab is clicked
     .catch(ui.signInFailure)
 }
 

@@ -20,8 +20,7 @@ const onViewRoutine = function (id) {
     .then(ui.viewRoutineSuccess)
     .then(() => {
       $('#view-back-button').on('click', () => {
-        $('.show-routine-container').hide()
-        $('.all-routines-container').show()
+        $('#trending-click').click()
       })
     })
     .catch(ui.viewRoutineFailure)
@@ -49,12 +48,6 @@ const onEditRoutine = function (id, data) {
   console.log('this is the edit data', data)
   api.update(id, data)
     .then(ui.editRoutineSuccess)
-    .then(() => {
-      onViewMyRoutines()
-      $('.view-my-routines').show()
-      $('.edit-routine-container').empty()
-    })
-    .then(onViewRoutines)
     .catch(ui.editRoutineFailure)
 }
 
@@ -71,17 +64,13 @@ const onShowEdit = function (id) {
     .then(() => {
       $('.edit-routine-cancel').on('click', (event) => {
         event.preventDefault()
-        onViewMyRoutines()
-        $('.view-my-routines').show()
-        $('.edit-routine-container').empty()
+        $('#myposts-click').click()
       })
     })
     .then(() => {
       $('#edit-back-button').on('click', (event) => {
         event.preventDefault()
-        onViewMyRoutines()
-        $('.view-my-routines').show()
-        $('.edit-routine-container').empty()
+        $('#myposts-click').click()
       })
     })
     .catch(ui.showEditFailure)
@@ -134,6 +123,7 @@ const onDeleteClick = function () {
 }
 
 const onShowAddForm = function () {
+  ui.onShowAddTab()
   $('.add-routine-container').show()
   $('#addRoutine').on('submit', onAddRoutine)
 }
