@@ -44,9 +44,4 @@ $(() => {
     $('.view-my-routines').show()
     $('#addRoutine').hide()
   })
-  $('.add-routine-cancel').on('click', (event) => {
-    event.preventDefault()
-    $('.view-my-routines').show()
-    $('#addRoutine').hide()
-  })
 })
