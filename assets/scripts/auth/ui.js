@@ -56,6 +56,8 @@ const signOutSuccess = function () {
   $('.all-routines-container').empty()
   $('.view-my-routines').empty()
   $('.edit-routine-container').empty()
+  $('.add-routine-container').empty()
+  $('.show-routine-container').empty()
   $('#sign-in-div').show()
   greenNotification('Signed out successfully')
 }
