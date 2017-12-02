@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Beauty Like You</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="https://i.imgur.com/mOHWsc3.png">
+
+      <!-- Do not add `script` tags-->
+      <script src="https://use.fontawesome.com/2bb4b018e5.js"></script>
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+
+      <!-- nav-bar -->
+      <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #000;">
+        <span class="navbar-brand" style="color: red;"><img src="https://i.imgur.com/mOHWsc3.png" style="width: 32px; height: 32px;">Beauty Like You</span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="navbar-toggler-icon bg-lightt push "></div>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="active-after-signin nav-item" style="display: none;">
+              <a class="nav-link" id="change-password-form" style="color: white;">Change Password</a>
+            </li>
+            <li class="active-after-signin nav-item active" style="display: none;">
+              <a class="nav-link" id="sign-out" style="color: white;">Sign Out</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <!--  -->
+      <!-- auth forms -->
+      <div class="container-fluid auth-forms" id="auth">
+
+        <!-- sign-in -->
+        <div class="row justify-content-center mt-1" id="sign-in-div" style="display: none;">
+          <div class="col-12 col-md-8 col-xl-6">
+            <form class="mb-1" id="sign-in">
+              <h2>Sign In</h2>
+              <div class="form-group">
+                <label for="sign-in-email">Email</label>
+                <input type="email" class="form-control" id="sign-in-email" name="credentials[email]" placeholder="name@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="sign-in-password">Password</label>
+                <input type="password" class="form-control" id="sign-in-password" name="credentials[password]" placeholder="Password" required>
+              </div>
+              <button type="submit" class="btn btn-primary" name="submit">Sign in</button>
+            </form>
+            <div class="pt-2">
+            <a href="#" id="new-user" style="color: white;">Need to sign up?</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- sign-up -->
+        <div class="row justify-content-center mt-1" id="sign-up-div" style="display: none;">
+          <div class="col-12 col-md-8 col-xl-6">
+            <form class="mb-1" id="sign-up">
+              <h2>Sign Up</h2>
+              <div class="form-group">
+                <label for="sign-up-email">Email</label>
+                <input type="email" class="form-control" id="sign-up-email" name="credentials[email]" placeholder="name@example.com">
+              </div>
+              <div class="form-group">
+                <label for="sign-up-password">Password</label>
+                <input type="password" class="form-control" id="sign-up-password" name="credentials[password]" placeholder="Password">
+              </div>
+              <div class="form-group">
+                <label for="sign-up-password-conf">Password confirmation</label>
+                <input type="password" class="form-control" id="sign-up-password-conf" name="credentials[password_confirmation]" placeholder="Re-enter password">
+              </div>
+              <button type="button" class="btn btn-secondary" id="new-user-cancel" name="cancel">Cancel</button>
+              <button type="submit" class="btn btn-primary" name="submit">Sign up</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- change password -->
+        <div class="modal fade" id="changePasswordModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Change Password</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form id="change-password">
+                  <div class="modal-body">
+                    <div class="form-group">
+                      <label for="old-password">Old Password</label>
+                      <input type="password" class="form-control" name="passwords[old]" placeholder="Old Password" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="new-password">New Password</label>
+                      <input type="password" class="form-control" name="passwords[new]" placeholder="New Password" required>
+                    </div>
+                  </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <ul id="nav-tabs" class="nav nav-tabs nav-fill" style="display: none;">
+      <li class="nav-item tab-style">
+        <a class="nav-link active" data-toggle="tab" id="trending-click" href="#trending" role="tab">Trending</a>
+      </li>
+      <li class="nav-item tab-style">
+        <a class="nav-link" data-toggle="tab" id="addpost-click" href="#addpost" role="tab">Add Post</a>
+      </li>
+      <li class="nav-item tab-style">
+        <a class="nav-link" data-toggle="tab" id="myposts-click" href="#myposts" role="tab">My Posts</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <!-- Trending Tab -->
+      <div class="tab-pane active all-routines-container" id="trending" role="tabpanel"></div>
+      <!-- Favorites Tab -->
+      <div class="tab-pane add-routine-container" id="addpost" role="tabpanel">
+      </div>
+      <!-- My Posts Tab for adds and edits -->
+      <div class="tab-pane view-my-routines" id="myposts" role="tabpanel"></div>
+    </div>
+
+
+
+  <div class="show-routine-container"></div>
+  <div class="edit-routine-container"></div>
+
+    </body>
+</html>
